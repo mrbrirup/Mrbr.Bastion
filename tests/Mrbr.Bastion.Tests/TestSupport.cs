@@ -27,6 +27,16 @@ internal sealed class TestLedger : IDisposable
             try{return await reopen();}
             catch(IOException error)when(OperatingSystem.IsWindows() && ((error.HResult & 0xffff) is 32 or 33) && attempt<40)
             {await Task.Delay(50);}
+            // A terminated Windows child can leave a mapped WAL SHM view briefly
+            // alive. SQLite may report IOERR_TRUNCATE or IOERR_SHMOPEN while
+            // opening that view, rather than a managed sharing violation.
+            // Retry only here, after exit, within the same two-second bound.
+            // Other I/O/corruption errors and ordinary writer opens still fail.
+            catch(SqliteException error)when(OperatingSystem.IsWindows()
+                && error.SqliteExtendedErrorCode is 1546 or 4618 && attempt<40)
+            {await Task.Delay(50);}
+            catch(SqliteException error)
+            {throw new InvalidOperationException($"Post-exit SQLite reopen failed (primary {error.SqliteErrorCode}, extended {error.SqliteExtendedErrorCode}).",error);}
         }
     }
     public static async Task AfterProcessExitAsync(Func<Task> reopen) =>

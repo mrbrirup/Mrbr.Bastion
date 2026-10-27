@@ -61,7 +61,7 @@
     "Executable inventory fixture assumed a 1.x product version; its synthetic semantic-version advisory now binds to the inspected release version.",
     "Test cleanup retries transient Windows access-denied results from mapped SQLite SHM files after child termination; permanent errors still fail."
   ],
-  "followUpScope": "Subsequent documentation-only commits record local verification and public publication. Production source, tests, build settings, locked dependencies, scripts, CI and reviewed image bytes remain identical to the locally tested commit.",
+  "followUpScope": "The released tag retains the reviewed source. Later main commits update publication documentation and the test-only Windows post-termination reopen helper; production assemblies, dependencies, scripts, CI and reviewed image bytes remain unchanged.",
   "githubCi": {
     "runId": 40532647144,
     "url": "https://github.com/mrbrirup/Mrbr.Bastion/actions/runs/40532647144",
@@ -106,5 +106,30 @@
     "anonymousPrivateReportingEntry": "HTTP 302 to GitHub sign-in; no synthetic report submitted.",
     "secretScanningEnabled": true,
     "secretScanningPushProtectionEnabled": true
+  },
+  "postPublicationMain": {
+    "triggerRun": "https://github.com/mrbrirup/Mrbr.Bastion/actions/runs/40534108326",
+    "trigger": "Two forced-termination receiver recovery cases failed during immediate Windows SQLite reopen; release branch/tag CI had both passed.",
+    "change": "Test-only post-exit helper retries SQLite extended codes 1546 and 4618 within its existing two-second bound; other SQLite errors fail with extended-code diagnostics. No product error suppression or database repair.",
+    "localRepeatedRecoveryChecks": {
+      "passed": 10,
+      "failed": 0,
+      "repetitions": 5,
+      "reports": {
+        "post-exit-1.trx": "7a2c235389411b7801bb0d9b175e2477c39627971082ffb9a32dd8b16594ac8f",
+        "post-exit-2.trx": "26d2ed93d6e8a0d784df97828cff4533e2f913cd2ef9a08a0f0df828d6ba6b1e",
+        "post-exit-3.trx": "3bdb053484ef175b3624872e9be0a96b12850cf69c5cb15bc83b8ac12e6b4a26",
+        "post-exit-4.trx": "91976a6068f98edc71393c92b37a0f9d49a2138ce3b515232dc19db7aca58c9f",
+        "post-exit-5.trx": "a6b3583a82425cdb685cebb06c8cbd80b986e7b85b27a167a1f35a1602296681"
+      }
+    },
+    "hostedWorkflow": "https://github.com/mrbrirup/Mrbr.Bastion/actions/workflows/ci.yml?query=branch%3Amain",
+    "releaseTagAndAssetsUnchanged": true,
+    "dependabotAlerts": {
+      "enabled": false,
+      "reason": "Current connection lacks the API-required admin:repo_hook scope.",
+      "nugetCiAuditEnabled": true,
+      "scheduledVersionUpdatePullRequestsEnabled": true
+    }
   }
 }

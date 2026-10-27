@@ -17,7 +17,7 @@ Published: [**v0.1.0-preview.1**](https://github.com/mrbrirup/Mrbr.Bastion/relea
 
 ## Clean-checkout validation
 
-Locally verified source commit: **`5bdb82a9f6e77f480b33f079ca1529165e81bac5`**. Released commit: **`f15ed97565bfc99e57a70f92415bdb10dd1e3b6d`**. The difference contains only documentation and the validation record; production source, tests, build configuration, dependency locks, CI, scripts and reviewed images are identical. The aggregate [verification record](release/verification.json) includes hashes of the private local reports and the hosted verification result. Later main-branch publication updates are documentation only.
+Locally verified source commit: **`5bdb82a9f6e77f480b33f079ca1529165e81bac5`**. Released commit: **`f15ed97565bfc99e57a70f92415bdb10dd1e3b6d`**. The difference contains only documentation and the validation record; production source, tests, build configuration, dependency locks, CI, scripts and reviewed images are identical between those two commits. The aggregate [verification record](release/verification.json) includes hashes of the private local reports and the hosted verification result. Later main-branch updates record publication and the test-harness follow-up described below; production assemblies and release assets remain unchanged.
 
 | Check | Result |
 | --- | --- |
@@ -44,5 +44,13 @@ Historical GUI retention evidence in the configuration guide is separate from th
 - [x] Published annotated tag `v0.1.0-preview.1` pointing to the exact reviewed commit, as a public **prerelease**, with source-only notes, ZIP, manifest and `SHA256SUMS`. Verified `isDraft: false`, `isPrerelease: true`, the tag target and downloaded asset checksums. The tag and assets are left unchanged; no binaries are distributed.
 
 Source ZIP SHA-256: `8d51335ea5985fccc72e8355c5f96d42ddcd69ea512835206b446ef9bec8456c`.
+
+## Post-publication verification follow-up
+
+Both the release candidate's branch CI and its tag CI passed. A later documentation-only main-branch run exposed two failures when crash-recovery tests reopened SQLite immediately after forcibly terminating the receiver. The Windows mapped-SHM lifetime can produce SQLite `IOERR_TRUNCATE` (1546) or `IOERR_SHMOPEN` (4618); see [SQLite's reported Windows behavior](https://sqlite.org/forum/info/ba7afbd0e81501118563617430fe06d0aca052e55ece2b0d457f8e16fcf85bba) and [result codes](https://www.sqlite.org/rescode.html).
+
+Main's test-only post-exit helper now retries those two codes within its existing two-second bound. Other SQLite errors still fail with their extended code reported, recovery/integrity assertions remain in place, and no WAL/SHM files are deleted or repaired. Both actual receiver crash-recovery scenarios passed five consecutive local repetitions (10 checks). The [main-branch workflow](https://github.com/mrbrirup/Mrbr.Bastion/actions/workflows/ci.yml?query=branch%3Amain) validates this follow-up separately. The published tag and reviewed ZIP preserve the original source and successful release-run evidence.
+
+GitHub Dependabot alerts remain disabled: the current connection lacks the additional `admin:repo_hook` scope required by that API. CI's direct/transitive NuGet vulnerability audit and weekly Dependabot version-update PRs are active. No additional account permissions were requested or granted.
 
 The local scanner and screenshot review are a scoped credential/privacy review. They are not an independent security assessment, proof that all vulnerabilities are absent, legal certification, or a production readiness claim. The local `docs/` and `tmp/` trees were intentionally excluded from publication and are not sanitized for sharing.
