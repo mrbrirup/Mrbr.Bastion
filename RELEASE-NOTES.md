@@ -17,7 +17,7 @@ See the [functionality assessment](FUNCTIONALITY-AND-MVP.md) for project boundar
 
 Use Windows and the exact **.NET 11 RC3 SDK `11.0.100-rc.3.26522.148`** in [global.json](global.json). This is a deliberate developer-preview baseline; roll-forward is disabled. Microsoft lists the RC3 go-live support window as 25 October–10 November 2026 in its [support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Reassess the toolchain before relying on a deployment after that window. Visual Studio must support the selected SDK; the documented CLI build is the release verification baseline.
 
-Run `pwsh -File scripts/Verify-Release.ps1 -IncludeTls`. It uses locked NuGet restore, builds the full solution, runs both automated suites plus TLS, excludes live kernel ETW, and audits direct/transitive dependencies. The [publication checklist](PUBLICATION-CHECKLIST.md) records the exact local release results and separates them from pending GitHub checks. No certificates are trusted or system services installed by that verification script.
+Run `pwsh -File scripts/Verify-Release.ps1 -IncludeTls`. It uses locked NuGet restore, builds the full solution, runs both automated suites plus TLS, excludes live kernel ETW, and audits direct/transitive dependencies. The clean-clone Release build passed with **0 warnings/errors, 384 core tests and 6 desktop tests passed**, including TLS; two live ETW tests were explicitly excluded. The point-in-time dependency audit reported no vulnerable packages. The [publication checklist](PUBLICATION-CHECKLIST.md) records the evidence and separates it from pending GitHub checks. No certificates are trusted or system services installed by that verification script.
 
 ## Limits and deployment expectations
 

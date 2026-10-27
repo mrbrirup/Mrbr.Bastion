@@ -12,12 +12,27 @@ Candidate: **v0.1.0-preview.1**, source only, destination **mrbrirup/Mrbr.Bastio
 - [x] Visually review all 31 existing screenshots and inspect metadata. Retain 30 reviewed images with SHA-256 fingerprints in [the review manifest](release/screenshot-review.json). Withhold the one host software/version inventory screenshot, leave its original unchanged locally, and update the guide. Eight browser captures now have `.jpg` extensions matching their unchanged JPEG content.
 - [x] Initial candidate scan: Gitleaks **8.30.1**, official Windows x64 archive checksum verified, full default rules, fully redacted results, no inline allowlist bypass. **Zero findings.**
 - [x] Initial direct/transitive NuGet vulnerability audit: **52 projects, zero reported vulnerable dependencies**, no feed problems. This is a point-in-time known-advisory check.
-- [ ] Verify the final Git candidate and full history with Gitleaks, validate links/exclusions/image fingerprints and record the source artifact checksum.
-- [ ] Build/test a clean clone of the committed candidate using the pinned SDK and locked dependencies; record exact results below.
+- [x] Verify the Git candidate and full history with Gitleaks; validate links/exclusions/image fingerprints. The source archive and separate SHA-256 checksum are prepared locally for final publication review.
+- [x] Build/test a clean clone of the committed source using the pinned SDK and locked dependencies; record exact results below.
 
 ## Clean-checkout validation
 
-Pending final candidate validation. Historical GUI retention evidence in the configuration guide is separate from the RC3 clean-checkout build and automated suites. Live elevated ETW is deliberately outside this release verification; its prior GUI runs are documented with their actual losses and recovery results.
+Verified source commit: **`5bdb82a9f6e77f480b33f079ca1529165e81bac5`**. The following documentation-only commit records the results; production source, tests, build configuration, dependency locks, CI, scripts and reviewed images are identical. The aggregate [verification record](release/verification.json) includes hashes of the private raw reports.
+
+| Check | Result |
+| --- | --- |
+| Clean local Git clone, no existing `bin/obj` or deployment state | Passed; tracked tree remained clean after verification |
+| Exact SDK, Release build, `CI=true`, locked restore | SDK `11.0.100-rc.3.26522.148`; **0 warnings, 0 errors** |
+| Core suite | **384 passed, 0 failed, 0 skipped**; 2 live kernel ETW tests explicitly excluded |
+| WinForms/configuration suite | **6 passed, 0 failed, 0 skipped** |
+| TLS integration | Passed: pinned HTTPS HTTP/1.1 and HTTP/2 delivery plus heartbeat auditing/health; no certificate trust-store changes |
+| Direct/transitive NuGet audit | **52 projects; 0 reported vulnerable dependencies; 0 feed problems** |
+| Candidate and full-history Gitleaks 8.30.1 scans | **0 findings**, default rules, fully redacted, inline allowlist comments disabled |
+| Public-file gate | All projects locked; relative documentation links valid; 30 reviewed image hashes/formats/metadata checked; private paths excluded |
+
+The first attempt used an empty package cache and exposed two fixture failures. The TLS fixture now imports a temporary current-user Windows key for Schannel, retaining certificate pinning. The executable inventory fixture now uses the inspected semantic release version rather than assuming 1.x; its synthetic advisory still has to produce an affected finding. Test cleanup also retries transient Windows SHM access-denied errors after child termination without changing ACLs. The corrected final clone reused only the downloaded NuGet packages and performed a complete fresh build and both suites successfully.
+
+Historical GUI retention evidence in the configuration guide is separate from this RC3 automated verification. Live elevated ETW is deliberately outside this run; its prior GUI runs are documented with their actual losses and recovery results. Raw TRX/logs, test keys and temporary state remain ignored locally. No public repository, remote push or GitHub CI run has occurred yet.
 
 ## GitHub publication — final review required
 

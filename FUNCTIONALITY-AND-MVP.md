@@ -146,7 +146,7 @@ For distributed releases, integrity metadata and a maintained vulnerability-resp
 Before the first public push:
 
 - [x] Review candidate files and all screenshots for credentials and identifying host evidence; withhold the host inventory image and record reviewed image hashes. Run the final staged/history gate before publication. Ignore rules do not sanitize files or history.
-- [ ] Complete clean-checkout and hosted CI evidence, tracked separately in the publication checklist. Local success is separate from a GitHub run.
+- [x] Record the clean-checkout RC3 Release build, both suites and TLS in the publication checklist. Hosted CI remains a separate pending publication check.
 - [x] Add an explicit early-MVP status, setup, exact RC3 baseline and known limits to the landing page; link the guides and roadmap. Do not advertise zero-loss, intrusion prevention, complete vulnerability coverage or production readiness.
 - [ ] Establish the real vulnerability reporting channel described by `SECURITY.md`, and verify that a reporter can use it privately.
 - [x] Select a source-only `v0.1.0-preview.1` prerelease. Dependencies are restored separately with their own licenses; binary redistribution remains a future release concern.
