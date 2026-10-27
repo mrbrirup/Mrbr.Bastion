@@ -2,7 +2,7 @@
   <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.83.0" />
+    <PackageReference Include="Grpc.AspNetCore.Server" Version="2.84.0" />
     <ProjectReference Include="..\Mrbr.Bastion.Auditing\Mrbr.Bastion.Auditing.csproj" />
     <ProjectReference Include="..\Mrbr.Bastion.Grpc\Mrbr.Bastion.Grpc.csproj" />
   </ItemGroup>
