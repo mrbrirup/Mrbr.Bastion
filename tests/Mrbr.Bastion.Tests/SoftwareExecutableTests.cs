@@ -31,8 +31,15 @@ public sealed class SoftwareExecutableTests
         using var node=new EcdsaSignatureProvider(temp.NodeKey,nodeId);using var receiver=new EcdsaSignatureProvider(temp.ServerKey,receiptId);
         var cacheOptions=new DurableCacheOptions{NodeId=agent.NodeId,DatabasePath=Path.Combine(temp.DirectoryPath,"agent.db"),AdditionalPayloadCodecs=[new InventoryPayloadCodec()]};Guid ledgerId;
         await using(var cache=await DurableTelemetryCache.OpenAsync(cacheOptions,node,node,receiver)){ledgerId=(await cache.GetStatusAsync()).Checkpoint.LedgerId;Assert.True((await cache.GetStatusAsync()).PendingBlocks>=3);}
-        string exposurePath=Path.Combine(temp.DirectoryPath,"exposures.db");var metadata=await new ArtifactInspector().InspectAsync(sample);var mapping=SoftwareEvidence.Mapping() with{Publisher=metadata.Publisher!,Product=metadata.Product!};
-        await using(var exposures=SqliteExposureStore.Open(exposurePath)){await exposures.ReviewAsync(mapping);await exposures.StorePageAsync(mapping,0,[SoftwareEvidence.Cve()],1,DateTimeOffset.UtcNow,TimeSpan.FromHours(6));}
+        string exposurePath=Path.Combine(temp.DirectoryPath,"exposures.db");var metadata=await new ArtifactInspector().InspectAsync(sample);
+        // The copied test assembly has the release's informational version, including
+        // prerelease/build metadata. Bind the synthetic advisory to that observed
+        // version rather than assuming every future release is in the 1.x range.
+        Assert.False(string.IsNullOrWhiteSpace(metadata.ProductVersion));
+        var mapping=SoftwareEvidence.Mapping() with{Publisher=metadata.Publisher!,Product=metadata.Product!,Scheme=VersionScheme.Semantic};
+        var advisory=SoftwareEvidence.Cve(start:metadata.ProductVersion,end:null);
+        Assert.Equal(Applicability.Affected,ApplicabilityEvaluator.Evaluate(advisory,mapping,metadata.ProductVersion).State);
+        await using(var exposures=SqliteExposureStore.Open(exposurePath)){await exposures.ReviewAsync(mapping);await exposures.StorePageAsync(mapping,0,[advisory],1,DateTimeOffset.UtcNow,TimeSpan.FromHours(6));}
         string serverPath=Path.Combine(temp.DirectoryPath,"server.json");File.WriteAllText(serverPath,JsonSerializer.Serialize(new
         {
             Kestrel=new{Endpoints=new{Test=new{Url="http://127.0.0.1:0",Protocols="Http1"}}},Bastion=new ServerSettings

@@ -80,7 +80,17 @@ internal sealed class NetworkIngestionHost : IAsyncDisposable
             request.CertificateExtensions.Add(names.Build());
             request.CertificateExtensions.Add(new X509BasicConstraintsExtension(false, false, 0, true));
             request.CertificateExtensions.Add(new X509EnhancedKeyUsageExtension(new OidCollection { new("1.3.6.1.5.5.7.3.1") }, true));
-            certificate = request.CreateSelfSigned(DateTimeOffset.UtcNow.AddMinutes(-1), DateTimeOffset.UtcNow.AddHours(1));
+            using var generated = request.CreateSelfSigned(DateTimeOffset.UtcNow.AddMinutes(-1), DateTimeOffset.UtcNow.AddHours(1));
+            // Schannel needs a named private key for server credential acquisition.
+            // UserKeySet creates a temporary current-user container; no trust-store
+            // entry or PersistKeySet is used, and host disposal releases the key.
+            byte[] pfx = generated.Export(X509ContentType.Pkcs12);
+            try
+            {
+                certificate = X509CertificateLoader.LoadPkcs12(pfx, null,
+                    OperatingSystem.IsWindows() ? X509KeyStorageFlags.UserKeySet : X509KeyStorageFlags.EphemeralKeySet);
+            }
+            finally { CryptographicOperations.ZeroMemory(pfx); }
         }
         var builder = WebApplication.CreateSlimBuilder();
         builder.Logging.ClearProviders();

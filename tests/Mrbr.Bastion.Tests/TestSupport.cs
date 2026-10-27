@@ -79,6 +79,11 @@ internal sealed class TestLedger : IDisposable
             try { if (Directory.Exists(target)) Directory.Delete(target, recursive: true); break; }
             catch (IOException error) when (OperatingSystem.IsWindows() && ((error.HResult & 0xffff) is 32 or 33) && attempt<40)
             { Thread.Sleep(50); }
+            // Windows can briefly return ACCESS_DENIED for a mapped SQLite SHM
+            // file after a test child exits. Retry without changing its ACL or
+            // attributes; a persistent permission error still fails cleanup.
+            catch (UnauthorizedAccessException) when (OperatingSystem.IsWindows() && attempt<40)
+            { Thread.Sleep(50); }
         }
     }
 }
