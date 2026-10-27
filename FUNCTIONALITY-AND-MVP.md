@@ -80,7 +80,7 @@ The [retention end-to-end record](CONFIGURATION-GUIDE.md#17-retention-enabled-en
 
 The observed queue drops make performance/capacity validation a concrete remaining requirement. Raising a queue bound absorbs bursts; it does not establish sustainable throughput. Neither run establishes behaviour over days, across a fleet, during disk exhaustion, or after a production service-account migration. gRPC, external notification delivery and live NVD retrieval are implemented/tested in other ways, but are outside this GUI retention run's evidence.
 
-The original assessment used focused pattern/ignore checks and preceded any commit or remote. The subsequent [publication checklist](PUBLICATION-CHECKLIST.md) records the full candidate secret scan, screenshot privacy review, exact SDK choice, clean-checkout verification and outstanding GitHub actions. These are scoped checks, not an independent security assessment. The historical GUI results above have not been relabelled as RC3 runs.
+The original assessment used focused pattern/ignore checks and preceded any commit or remote. The subsequent [publication checklist](PUBLICATION-CHECKLIST.md) records the full candidate secret scan, screenshot privacy review, exact SDK choice, clean-checkout verification and completed GitHub publication. These are scoped checks, not an independent security assessment. The historical GUI results above have not been relabelled as RC3 runs.
 
 ## To do before broader use
 
@@ -88,7 +88,7 @@ These are actionable gaps identified from the current implementation and test re
 
 | ID | Work / current status | Necessity and stage | Completion criterion |
 | --- | --- | --- | --- |
-| T1 | Prepare the first public source snapshot. Local preparation is tracked in the publication checklist; public push/channel/hosted CI await the final publication decision. | **2 — Must have before public release.** | Review candidate files and screenshots for sensitive data, keep deployment data excluded, perform a clean-checkout build, configure a real private vulnerability channel, and record a successful GitHub CI run. |
+| T1 | **Completed:** first public source snapshot, `v0.1.0-preview.1`, published after explicit owner approval. | **2 — Must have before public release.** | Candidate/hosted scans, screenshot review, excluded deployment data, clean-checkout build/tests, private reporting, secret protection, green GitHub CI and verified source release assets are recorded in the publication checklist. |
 | T2 | Developer-preview baseline selected: .NET 11 RC3, exact SDK with roll-forward disabled. | **2 — Must have for a supported release.** The owner explicitly selected a labelled developer preview. | Validate the exact setup and document the RC3 support window. Windows is required for collectors and WinForms; the verified CLI setup is recorded in the publication checklist. A supported production release still needs a maintained platform/toolchain policy. |
 | T3 | Establish sustained capacity and failure limits. Short checks exist; endurance evidence is missing. | **2 — Must have for unattended monitoring.** | Run a representative multi-day soak with concurrent inventory/retention/audits, receiver outages, restarts and quota pressure; publish resource/throughput bounds, loss counters and recovery results. Include archive-count/file-handle growth and startup/audit cost. |
 | T4 | Add a first-class operational storage/capacity view. Counts/errors are currently available through CLI and local maintenance logs. | **2 — Must have for unattended monitoring.** | Surface resident/archive/WAL/free-space usage, quota proximity, oldest pending age and maintenance failures; alert before collection hits a capacity limit. |
@@ -143,20 +143,20 @@ For distributed releases, integrity metadata and a maintained vulnerability-resp
 | Controlled operator/lab evaluation | **Suitable with documented limits and operator oversight.** Use isolated deployment state, monitor capacity, preserve backups and expect manual administration. T9 would substantially improve investigation usability. |
 | Supported, unattended production fleet | **Further work required.** Prioritise T3–T8, T10–T12 and representative deployment/security validation. |
 
-Before the first public push:
+First public release status:
 
 - [x] Review candidate files and all screenshots for credentials and identifying host evidence; withhold the host inventory image and record reviewed image hashes. Run the final staged/history gate before publication. Ignore rules do not sanitize files or history.
-- [x] Record the clean-checkout RC3 Release build, both suites and TLS in the publication checklist. Hosted CI remains a separate pending publication check.
+- [x] Record the clean-checkout RC3 Release build, both suites and TLS in the publication checklist. Hosted CI also passed for the exact released commit.
 - [x] Add an explicit early-MVP status, setup, exact RC3 baseline and known limits to the landing page; link the guides and roadmap. Do not advertise zero-loss, intrusion prevention, complete vulnerability coverage or production readiness.
-- [ ] Establish the real vulnerability reporting channel described by `SECURITY.md`, and verify that a reporter can use it privately.
+- [x] Enable private vulnerability reporting and verify configuration and the sign-in entry point described by `SECURITY.md`.
 - [x] Select a source-only `v0.1.0-preview.1` prerelease. Dependencies are restored separately with their own licenses; binary redistribution remains a future release concern.
-- [ ] Create the initial commit/remote and publish only after that concrete snapshot has been reviewed. This assessment does not publish it.
+- [x] Create the initial commit/remote and publish the [source-only prerelease](https://github.com/mrbrirup/Mrbr.Bastion/releases/tag/v0.1.0-preview.1) only after snapshot review, explicit owner approval and successful hosted CI.
 
 README, licence, contribution/security/support guidance and issue/PR templates are present. A code of conduct can be added when a private enforcement contact and community process are established. These files do not replace operational safety work. See [GitHub's community profile guidance](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/about-community-profiles-for-public-repositories). Enable/check repository secret protection as part of publication using [GitHub's secret-scanning guidance](https://docs.github.com/en/code-security/how-tos/secure-your-secrets/detect-secret-leaks/enable-secret-scanning); it complements pre-publication review.
 
 ## Recommended next milestones
 
-1. **Publish the developer MVP:** complete T1, clarify toolchain/maturity in T2, preserve this test record and obtain a clean-checkout/CI result. No extra monitoring feature is needed merely to make the source useful to others.
+1. **Developer MVP published:** T1 is complete and T2's explicit RC3 developer-preview choice is documented. Clean-checkout and hosted CI results accompany the reviewed source prerelease. Maintain the dependency/toolchain checks as the project develops.
 2. **Make investigations and capacity visible:** T9, T4 and resource/worker diagnostics, with authorised bounded queries and actionable storage alerts.
 3. **Make deployment repeatable:** T7, T8 and T10, including least-privilege service accounts and tested upgrades/rotation.
 4. **Make retained evidence recoverable at scale:** T6, T5 and T11, with restore drills, external anchors and administrative attribution.

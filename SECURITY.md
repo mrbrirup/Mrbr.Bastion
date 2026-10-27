@@ -2,7 +2,7 @@
 
 ## Reporting a vulnerability
 
-The intended private channel is [GitHub private vulnerability reporting](https://github.com/mrbrirup/Mrbr.Bastion/security/advisories/new). Repository creation and enablement are still pending the final publication review; the [publication checklist](PUBLICATION-CHECKLIST.md) records that status. Do not assume the channel is active until it is verified there. If it is unavailable, ask the maintainer to establish a private channel before sharing technical details. A public issue requesting a private contact must contain no exploit details, credentials or real host evidence.
+Report vulnerabilities through [GitHub private vulnerability reporting](https://github.com/mrbrirup/Mrbr.Bastion/security/advisories/new). It is enabled and was verified on 27 October 2026; anonymous visitors are directed to GitHub sign-in. The [publication checklist](PUBLICATION-CHECKLIST.md) records the configuration checks. If the channel becomes unavailable, ask the maintainer to establish a private channel before sharing technical details. A public issue requesting a private contact must contain no exploit details, credentials or real host evidence.
 
 Once a private channel is available, include the affected revision, environment, a minimal reproduction using synthetic data, and the expected and observed behavior. Remove private signing keys, passwords, bearer/session tokens, database contents, and identifying telemetry from reports.
 

@@ -44,7 +44,7 @@ Tests use temporary directories, real signatures, and real SQLite transactions. 
 
 The helper requires PowerShell 7, performs locked restore and a full Release build, runs both suites (including the opt-in TLS fixture), and audits direct/transitive NuGet dependencies. Results go to `artifacts/verification/`. For a build alone, use `dotnet restore Mrbr.Bastion.slnx --locked-mode` followed by `dotnet build Mrbr.Bastion.slnx -c Release --no-restore`.
 
-The prepared [Windows CI workflow](.github/workflows/ci.yml) performs the same checks plus source-history secret scanning and the reviewed-file/screenshot gate. It excludes live kernel ETW capture. Hosted CI status remains pending until the repository is published. See [CONTRIBUTING.md](CONTRIBUTING.md) for development conventions and [SUPPORT.md](SUPPORT.md) for reporting problems.
+The [Windows CI workflow](.github/workflows/ci.yml) performs the same checks plus source-history secret scanning and the reviewed-file/screenshot gate. It excludes live kernel ETW capture. [Hosted CI passed for the first prerelease](https://github.com/mrbrirup/Mrbr.Bastion/actions/runs/40532647144); the [source-only release and checksums](https://github.com/mrbrirup/Mrbr.Bastion/releases/tag/v0.1.0-preview.1) are public. See [CONTRIBUTING.md](CONTRIBUTING.md) for development conventions and [SUPPORT.md](SUPPORT.md) for reporting problems.
 
 ## Central service setup
 

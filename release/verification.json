@@ -61,6 +61,50 @@
     "Executable inventory fixture assumed a 1.x product version; its synthetic semantic-version advisory now binds to the inspected release version.",
     "Test cleanup retries transient Windows access-denied results from mapped SQLite SHM files after child termination; permanent errors still fail."
   ],
-  "followUpScope": "A documentation-only commit records these results. Production source, tests, build settings, locked dependencies, scripts, CI and reviewed image bytes remain identical to the tested commit.",
-  "githubCi": "Pending repository creation and publication approval."
+  "followUpScope": "Subsequent documentation-only commits record local verification and public publication. Production source, tests, build settings, locked dependencies, scripts, CI and reviewed image bytes remain identical to the locally tested commit.",
+  "githubCi": {
+    "runId": 40532647144,
+    "url": "https://github.com/mrbrirup/Mrbr.Bastion/actions/runs/40532647144",
+    "headSha": "f15ed97565bfc99e57a70f92415bdb10dd1e3b6d",
+    "conclusion": "success",
+    "core": {
+      "passed": 383,
+      "failed": 0,
+      "skipped": 1,
+      "skipReason": "Standard-user-only ETW rejection check cannot run on an elevated hosted runner.",
+      "explicitLiveEtwExclusions": 2
+    },
+    "desktop": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tls": "Passed",
+    "projectsAudited": 52,
+    "vulnerableDependencies": 0,
+    "secretFindings": 0,
+    "artifactRetentionDays": 14,
+    "reportSha256": {
+      "core.trx": "99743fc5588647d825e0b06f6deca65e93b04bda28a7fe07e158f9e82479dcfa",
+      "desktop.trx": "e3ce04dbe0a41fcfc54661b09353ec94cd93c8cd89867dc1f44a4ca5eeb43afc",
+      "dependency-audit.json": "d32e8e1f0cb044fc9dcff3fb517d21f96c90a1a03e59316cfed0f5e16339dd33",
+      "gitleaks.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  },
+  "publication": {
+    "isDraft": false,
+    "isPrerelease": true,
+    "publishedAt": "2026-10-27T15:41:49Z",
+    "tagName": "v0.1.0-preview.1",
+    "url": "https://github.com/mrbrirup/Mrbr.Bastion/releases/tag/v0.1.0-preview.1",
+    "sourceCommit": "f15ed97565bfc99e57a70f92415bdb10dd1e3b6d",
+    "sourceFileCount": 341,
+    "sourceArchiveSha256": "8d51335ea5985fccc72e8355c5f96d42ddcd69ea512835206b446ef9bec8456c",
+    "downloadedAssetsVerified": true,
+    "annotatedTagTargetVerified": true,
+    "privateVulnerabilityReportingEnabled": true,
+    "anonymousPrivateReportingEntry": "HTTP 302 to GitHub sign-in; no synthetic report submitted.",
+    "secretScanningEnabled": true,
+    "secretScanningPushProtectionEnabled": true
+  }
 }

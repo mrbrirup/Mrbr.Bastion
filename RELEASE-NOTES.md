@@ -1,6 +1,6 @@
 # v0.1.0-preview.1 — source-only developer MVP
 
-First public-release candidate, prepared 27 October 2026 for `mrbrirup/Mrbr.Bastion`. Publication is a separate final review step. The project was previously named ChronoGuard.
+First public source-only developer prerelease, published 27 October 2026 at [mrbrirup/Mrbr.Bastion](https://github.com/mrbrirup/Mrbr.Bastion/releases/tag/v0.1.0-preview.1), after owner approval and successful hosted CI. The project was previously named ChronoGuard.
 
 ## Included functionality
 
@@ -17,7 +17,9 @@ See the [functionality assessment](FUNCTIONALITY-AND-MVP.md) for project boundar
 
 Use Windows and the exact **.NET 11 RC3 SDK `11.0.100-rc.3.26522.148`** in [global.json](global.json). This is a deliberate developer-preview baseline; roll-forward is disabled. Microsoft lists the RC3 go-live support window as 25 October–10 November 2026 in its [support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core). Reassess the toolchain before relying on a deployment after that window. Visual Studio must support the selected SDK; the documented CLI build is the release verification baseline.
 
-Run `pwsh -File scripts/Verify-Release.ps1 -IncludeTls`. It uses locked NuGet restore, builds the full solution, runs both automated suites plus TLS, excludes live kernel ETW, and audits direct/transitive dependencies. The clean-clone Release build passed with **0 warnings/errors, 384 core tests and 6 desktop tests passed**, including TLS; two live ETW tests were explicitly excluded. The point-in-time dependency audit reported no vulnerable packages. The [publication checklist](PUBLICATION-CHECKLIST.md) records the evidence and separates it from pending GitHub checks. No certificates are trusted or system services installed by that verification script.
+Run `pwsh -File scripts/Verify-Release.ps1 -IncludeTls`. It uses locked NuGet restore, builds the full solution, runs both automated suites plus TLS, excludes live kernel ETW, and audits direct/transitive dependencies. The clean-clone Release build passed with **0 warnings/errors, 384 core tests and 6 desktop tests passed**, including TLS; two live ETW tests were explicitly excluded. The point-in-time dependency audit reported no vulnerable packages. The [publication checklist](PUBLICATION-CHECKLIST.md) records local and hosted evidence separately. No certificates are trusted or system services installed by that verification script.
+
+[Hosted CI for the released commit](https://github.com/mrbrirup/Mrbr.Bastion/actions/runs/40532647144) passed: **383 core tests and 6 desktop tests**, including TLS; one standard-user-only test was skipped on the elevated hosted runner. The two live ETW tests remained explicitly excluded. Full-history Gitleaks and the direct/transitive dependency audit reported zero findings. Release assets contain the reviewed source ZIP, a file-by-file SHA-256 manifest and `SHA256SUMS`; downloaded assets were checked against those checksums.
 
 ## Limits and deployment expectations
 
