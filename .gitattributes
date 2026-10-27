@@ -1,0 +1,17 @@
+# Normalize text in Git and keep checkouts consistent across platforms.
+* text=auto eol=lf
+
+# Native Windows command files.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.7z binary

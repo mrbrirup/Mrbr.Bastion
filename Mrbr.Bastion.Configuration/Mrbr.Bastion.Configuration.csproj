@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Mrbr.Bastion.Core/Mrbr.Bastion.Core.csproj" />
+    <ProjectReference Include="../Mrbr.Bastion.Server/Mrbr.Bastion.Server.csproj" />
+    <ProjectReference Include="../Mrbr.Bastion.Inventory.Agent/Mrbr.Bastion.Inventory.Agent.csproj" />
+  </ItemGroup>
+</Project>

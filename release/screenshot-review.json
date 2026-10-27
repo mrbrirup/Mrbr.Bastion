@@ -1,0 +1,133 @@
+{
+  "reviewDate": "2026-10-27",
+  "method": "Visual review of every original image plus structural/metadata inspection. Hashes bind this review to unchanged bytes; this is not automated credential recognition.",
+  "result": "No visible passwords, private-key contents, session tokens or personal account home paths in included images. Test node/user names, local test workspace paths, public fingerprints, signatures and expired test nonces remain as documented evidence.",
+  "included": [
+    {
+      "path": "images/configuration-guide/01-workspace.png",
+      "sha256": "38ecc977e53e9a3dc307e4a331d91fd5ba876e5020684322e26365401544f5ec"
+    },
+    {
+      "path": "images/configuration-guide/02-signing-keys.png",
+      "sha256": "936b4d98bad29a9358de8bdb9ada4f4d43436f9e903a6171c45d4064d727b45e"
+    },
+    {
+      "path": "images/configuration-guide/03-runtime-binaries.png",
+      "sha256": "8e02dccd33e731fcc7ab44097f7a0a31b5c0da66d9dd7f6293705798e1a35c47"
+    },
+    {
+      "path": "images/configuration-guide/04-collector.png",
+      "sha256": "8ccf866e230f1f2b4018d85d856de7fe1b7f9c0e38d583015733619cb637a270"
+    },
+    {
+      "path": "images/configuration-guide/05-inventory.png",
+      "sha256": "b1869a54a9202ac3df14a0d10e5221bd7268bddbbede6d75403960374c3e716e"
+    },
+    {
+      "path": "images/configuration-guide/06-receiver-https.png",
+      "sha256": "d338c083c357b21c1f0d3da92a0d0965630648786dcd96baaaf3d8044a47a12b"
+    },
+    {
+      "path": "images/configuration-guide/e2e/01-enrollment.png",
+      "sha256": "bb48ec643b5bea43d929d943b22a7b699036b4a55090eb9ea7b6ff6092fd1042"
+    },
+    {
+      "path": "images/configuration-guide/e2e/02-https-login.jpg",
+      "sha256": "08a9628d42968b2f59870da829af780a53f156b2b38eee1c9b328d28036f3be7"
+    },
+    {
+      "path": "images/configuration-guide/e2e/03-receiver-running.png",
+      "sha256": "b4ce749139f1f513755c6634d35f9976513b3e8a71bf7762b26ef3798af66cd8"
+    },
+    {
+      "path": "images/configuration-guide/e2e/04-first-live-attempt.png",
+      "sha256": "ccd993b8b8f78248bc708ee2dc3eade75e65391069b1c26e4d46810053e51d00"
+    },
+    {
+      "path": "images/configuration-guide/e2e/05-all-components-running.png",
+      "sha256": "9541ccd0f524b62c77065b6afcc8c855470877f71a86784c4bead862e504837b"
+    },
+    {
+      "path": "images/configuration-guide/e2e/06-dashboard-fleet.jpg",
+      "sha256": "49a28fbf27d53cb9ba3f3075d71dff1a18596276025419b7b4f2573d818971cb"
+    },
+    {
+      "path": "images/configuration-guide/e2e/07-heartbeat-history.jpg",
+      "sha256": "e4d3ae43b9a351576b61f0fba1497482aca1c64fccc0de6710f737bf863f57cd"
+    },
+    {
+      "path": "images/configuration-guide/e2e/08-alerts.jpg",
+      "sha256": "21c69a2ef99b95c46dbcb10bd6ab605cf11c08ce2b835fa8e5f778c6c4299602"
+    },
+    {
+      "path": "images/configuration-guide/e2e/10-final-stopped.png",
+      "sha256": "0d8bee105907454c8efb6899efbd43fad62f617e764a0e737affaf7822fcdfff"
+    },
+    {
+      "path": "images/configuration-guide/feedback/01-collector-settings.png",
+      "sha256": "c390279c744e353394156eee8e83c2fe62f9699cb2d9ce3ec2da3b276d11ba51"
+    },
+    {
+      "path": "images/configuration-guide/feedback/02-live-fleet.jpg",
+      "sha256": "9d3f15a4579568a634f3f340040cf95e8c4dd6cc669d8bbdd61cc89dcc97b297"
+    },
+    {
+      "path": "images/configuration-guide/feedback/03-default-batch-audits.jpg",
+      "sha256": "644afe8c8b8c9073826a88206c94986fb9754a087b7af782d726d89ddcd79433"
+    },
+    {
+      "path": "images/configuration-guide/feedback/04-tuned-live-fleet.jpg",
+      "sha256": "54b4e672607197bae569dd51835c24d2c24f210ee192c71c842aea7020d0cd6e"
+    },
+    {
+      "path": "images/configuration-guide/feedback/05-tuned-healthy-history.jpg",
+      "sha256": "2be05086b10e643a0ed489ea52fc55b946975d12942e5ef8bd863081374b9c9c"
+    },
+    {
+      "path": "images/configuration-guide/feedback/06-tuned-app-stopped.png",
+      "sha256": "296cb4999e01ade5451774b1ccffaf6adb50c9d6b8e17810bcf6e15964a91e50"
+    },
+    {
+      "path": "images/configuration-guide/retention/01-online-retention-running.png",
+      "sha256": "173fdb9c9f1ca9aa141c55accf04820a96f8e115910063640f68dbc789f1fa8b"
+    },
+    {
+      "path": "images/configuration-guide/retention/02-archive-with-pending-preserved.png",
+      "sha256": "49052538f1e511c8d90bfadb5c9fe454ada920a4c56b04a69222b6b22f5c2077"
+    },
+    {
+      "path": "images/configuration-guide/retention/03-recovery-stopped.png",
+      "sha256": "3b31576a4970e02dcf63166dbd6e6ebc9b77d6f9ac83182751cf4e75e7fa88fd"
+    },
+    {
+      "path": "images/configuration-guide/retention/04-compacted-and-verified.png",
+      "sha256": "5f2e8df386e312dd58b5bfb28e5e943fa9ec2004824df4ac6d2dce15a212ec35"
+    },
+    {
+      "path": "images/configuration-guide/retention/05-dashboard-after-restart.jpg",
+      "sha256": "f242d006760c379413f9313bbd80142d6d83b80160d8c07e78d3b85bdbe587a3"
+    },
+    {
+      "path": "images/configuration-guide/retention/06-preserved-audit-history.jpg",
+      "sha256": "9dfa3017524d64b3ad12750eeb926e57c454ed88a9dd88b6ef6e71cc5cd7626e"
+    },
+    {
+      "path": "images/configuration-guide/retention/07-retained-signed-evidence.jpg",
+      "sha256": "64a72f90bfb674dcb1c6fae6a1e15e3c242a04294026bf51d08e071e8665230c"
+    },
+    {
+      "path": "images/configuration-guide/retention/08-audit-cache-verification.jpg",
+      "sha256": "35b1780707a95489ba7f45a686f5697f12df6072f5e363fab84a9112b42757b4"
+    },
+    {
+      "path": "images/configuration-guide/retention/09-final-all-stopped.png",
+      "sha256": "4ec054fbd41cecebad7079e23f57b41c0de3995da07416f2176ec87b3404f1ff"
+    }
+  ],
+  "withheld": [
+    {
+      "path": "images/configuration-guide/e2e/09-software-inventory.png",
+      "reason": "Contains actual host software/version inventory evidence. Original retained locally unchanged, ignored and omitted from the public guide."
+    }
+  ]
+}

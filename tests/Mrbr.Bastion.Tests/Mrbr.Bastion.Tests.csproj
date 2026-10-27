@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../Mrbr.Bastion.Cache.Tool/Mrbr.Bastion.Cache.Tool.csproj" />
+    <ProjectReference Include="../../samples/Mrbr.Bastion.Console/Mrbr.Bastion.Console.csproj" />
+    <ProjectReference Include="../../Mrbr.Bastion.Operators.Tool/Mrbr.Bastion.Operators.Tool.csproj" />
+    <ProjectReference Include="../../Mrbr.Bastion.Inventory.Windows/Mrbr.Bastion.Inventory.Windows.csproj" />
+    <ProjectReference Include="../../Mrbr.Bastion.Inventory.Crawling/Mrbr.Bastion.Inventory.Crawling.csproj" />
+    <ProjectReference Include="../../Mrbr.Bastion.Inventory.Agent/Mrbr.Bastion.Inventory.Agent.csproj" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" PrivateAssets="all" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Core\Mrbr.Bastion.Core.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Cache\Mrbr.Bastion.Cache.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.CrashProbe\Mrbr.Bastion.CrashProbe.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Ingestion.Sqlite\Mrbr.Bastion.Ingestion.Sqlite.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Ingestion.AspNetCore\Mrbr.Bastion.Ingestion.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Transport.Http\Mrbr.Bastion.Transport.Http.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Transport.Grpc\Mrbr.Bastion.Transport.Grpc.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Server\Mrbr.Bastion.Server.csproj" />
+    <ProjectReference Include="..\..\Mrbr.Bastion.Auditing.Agent\Mrbr.Bastion.Auditing.Agent.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../Mrbr.Bastion.Configuration/Mrbr.Bastion.Configuration.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,37 @@
+syntax = "proto3";
+package mrbr.bastion.v1;
+option csharp_namespace = "Mrbr.Bastion.Grpc.Protocol";
+
+service TelemetryIngestion {
+  rpc Submit (SignedBlock) returns (SignedReceipt);
+  // Each response acknowledges exactly one durably committed request block.
+  rpc Exchange (stream SignedBlock) returns (stream SignedReceipt);
+}
+message SignedBlock {
+  int32 version = 1;
+  string node_id = 2;
+  string ledger_id = 3;
+  string block_id = 4;
+  int64 sequence_number = 5;
+  int64 created_utc_ticks = 6;
+  string previous_block_hash = 7;
+  string payload_format = 8;
+  int32 event_count = 9;
+  string algorithm = 10;
+  string key_id = 11;
+  bytes payload = 12;
+  string block_hash = 13;
+  bytes signature = 14;
+}
+message SignedReceipt {
+  int32 version = 1;
+  string node_id = 2;
+  string ledger_id = 3;
+  string block_id = 4;
+  int64 sequence_number = 5;
+  string block_hash = 6;
+  int64 accepted_utc_ticks = 7;
+  string algorithm = 8;
+  string key_id = 9;
+  bytes signature = 10;
+}

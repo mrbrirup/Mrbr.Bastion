@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "mrbr.bastion.operators": {
+        "type": "Project"
+      },
+      "mrbr.bastion.operators.security": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operators": "[0.1.0-preview.1, )"
+        }
+      }
+    }
+  }
+}

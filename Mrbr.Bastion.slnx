@@ -1,0 +1,86 @@
+<Solution>
+  <Folder Name="/Operators/">
+    <Project Path="Mrbr.Bastion.Operators/Mrbr.Bastion.Operators.csproj" />
+    <Project Path="Mrbr.Bastion.Operators.Security/Mrbr.Bastion.Operators.Security.csproj" />
+    <Project Path="Mrbr.Bastion.Operators.Sqlite/Mrbr.Bastion.Operators.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Operators.AspNetCore/Mrbr.Bastion.Operators.AspNetCore.csproj" />
+    <Project Path="Mrbr.Bastion.Operators.Tool/Mrbr.Bastion.Operators.Tool.csproj" />
+  </Folder>
+  <Folder Name="/Software/">
+    <Project Path="Mrbr.Bastion.Inventory.Agent/Mrbr.Bastion.Inventory.Agent.csproj" />
+    <Project Path="Mrbr.Bastion.Vulnerabilities.Nvd/Mrbr.Bastion.Vulnerabilities.Nvd.csproj" />
+    <Project Path="Mrbr.Bastion.Vulnerabilities.Sqlite/Mrbr.Bastion.Vulnerabilities.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Software.Hosting/Mrbr.Bastion.Software.Hosting.csproj" />
+    <Project Path="Mrbr.Bastion.Inventory.Contracts/Mrbr.Bastion.Inventory.Contracts.csproj" />
+    <Project Path="Mrbr.Bastion.Inventory.Discovery/Mrbr.Bastion.Inventory.Discovery.csproj" />
+    <Project Path="Mrbr.Bastion.Inventory.Windows/Mrbr.Bastion.Inventory.Windows.csproj" />
+    <Project Path="Mrbr.Bastion.Inventory.Crawling/Mrbr.Bastion.Inventory.Crawling.csproj" />
+    <Project Path="Mrbr.Bastion.Inventory.Sqlite/Mrbr.Bastion.Inventory.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Vulnerabilities/Mrbr.Bastion.Vulnerabilities.csproj" />
+  </Folder>
+  <Project Path="Mrbr.Bastion.Abstraction/Mrbr.Bastion.Abstraction.csproj" />
+  <Project Path="Mrbr.Bastion.Cache/Mrbr.Bastion.Cache.csproj" />
+  <Project Path="Mrbr.Bastion.Archiving/Mrbr.Bastion.Archiving.csproj" />
+  <Project Path="Mrbr.Bastion.Cache.Tool/Mrbr.Bastion.Cache.Tool.csproj" />
+  <Project Path="Mrbr.Bastion.Core/Mrbr.Bastion.Core.csproj" />
+  <Project Path="Mrbr.Bastion.Cryptography/Mrbr.Bastion.Cryptography.csproj" />
+  <Folder Name="/Transport/">
+    <Project Path="Mrbr.Bastion.Transport/Mrbr.Bastion.Transport.csproj" />
+    <Project Path="Mrbr.Bastion.Transport.Http/Mrbr.Bastion.Transport.Http.csproj" />
+    <Project Path="Mrbr.Bastion.Transport.Grpc/Mrbr.Bastion.Transport.Grpc.csproj" />
+    <Project Path="Mrbr.Bastion.Grpc/Mrbr.Bastion.Grpc.csproj" />
+  </Folder>
+  <Folder Name="/Ingestion/">
+    <Project Path="Mrbr.Bastion.Ingestion/Mrbr.Bastion.Ingestion.csproj" />
+    <Project Path="Mrbr.Bastion.Ingestion.Sqlite/Mrbr.Bastion.Ingestion.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Ingestion.AspNetCore/Mrbr.Bastion.Ingestion.AspNetCore.csproj" />
+    <Project Path="Mrbr.Bastion.Server/Mrbr.Bastion.Server.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Mrbr.Bastion.Console/Mrbr.Bastion.Console.csproj" />
+  </Folder>
+  <Folder Name="/Auditing/">
+    <Project Path="Mrbr.Bastion.Auditing.Contracts/Mrbr.Bastion.Auditing.Contracts.csproj" />
+    <Project Path="Mrbr.Bastion.Auditing/Mrbr.Bastion.Auditing.csproj" />
+    <Project Path="Mrbr.Bastion.Auditing.Agent/Mrbr.Bastion.Auditing.Agent.csproj" />
+    <Project Path="Mrbr.Bastion.Auditing.Sqlite/Mrbr.Bastion.Auditing.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Auditing.AspNetCore/Mrbr.Bastion.Auditing.AspNetCore.csproj" />
+    <Project Path="Mrbr.Bastion.Health/Mrbr.Bastion.Health.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Mrbr.Bastion.CrashProbe/Mrbr.Bastion.CrashProbe.csproj" />
+    <Project Path="tests/Mrbr.Bastion.Desktop.Tests/Mrbr.Bastion.Desktop.Tests.csproj" />
+    <Project Path="tests/Mrbr.Bastion.Tests/Mrbr.Bastion.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Operations/">
+    <Project Path="Mrbr.Bastion.Alerting/Mrbr.Bastion.Alerting.csproj" />
+    <Project Path="Mrbr.Bastion.Alerting.Sqlite/Mrbr.Bastion.Alerting.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Operations/Mrbr.Bastion.Operations.csproj" />
+    <Project Path="Mrbr.Bastion.Operations.Hosting/Mrbr.Bastion.Operations.Hosting.csproj" />
+    <Project Path="Mrbr.Bastion.Dashboard/Mrbr.Bastion.Dashboard.csproj" />
+  </Folder>
+  <Folder Name="/Notifications/">
+    <Project Path="Mrbr.Bastion.Notifications/Mrbr.Bastion.Notifications.csproj" />
+    <Project Path="Mrbr.Bastion.Notifications.Sqlite/Mrbr.Bastion.Notifications.Sqlite.csproj" />
+    <Project Path="Mrbr.Bastion.Notifications.Smtp/Mrbr.Bastion.Notifications.Smtp.csproj" />
+    <Project Path="Mrbr.Bastion.Notifications.Webhooks/Mrbr.Bastion.Notifications.Webhooks.csproj" />
+    <Project Path="Mrbr.Bastion.Notifications.Hosting/Mrbr.Bastion.Notifications.Hosting.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Solution Items/todos.md" />
+    <File Path="FUNCTIONALITY-AND-MVP.md" />
+    <File Path="CONFIGURATION-GUIDE.md" />
+    <File Path="CACHE-RETENTION.md" />
+    <File Path="README.md" />
+    <File Path="RELEASE-NOTES.md" />
+    <File Path="PUBLICATION-CHECKLIST.md" />
+    <File Path="SECURITY.md" />
+    <File Path="SUPPORT.md" />
+    <File Path="CONTRIBUTING.md" />
+  </Folder>
+  <Project Path="Mrbr.Bastion.Hosting/Mrbr.Bastion.Hosting.csproj" />
+  <Folder Name="/Desktop/">
+    <Project Path="Mrbr.Bastion.Configuration/Mrbr.Bastion.Configuration.csproj" />
+    <Project Path="Mrbr.Bastion.Desktop/Mrbr.Bastion.Desktop.csproj" />
+  </Folder>
+</Solution>

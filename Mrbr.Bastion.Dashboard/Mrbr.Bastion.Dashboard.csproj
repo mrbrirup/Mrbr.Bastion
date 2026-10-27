@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Mrbr.Bastion.Operators.AspNetCore/Mrbr.Bastion.Operators.AspNetCore.csproj" />
+    <ProjectReference Include="../Mrbr.Bastion.Vulnerabilities/Mrbr.Bastion.Vulnerabilities.csproj" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <ProjectReference Include="..\Mrbr.Bastion.Operations\Mrbr.Bastion.Operations.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Operations.Hosting\Mrbr.Bastion.Operations.Hosting.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Notifications\Mrbr.Bastion.Notifications.csproj" />
+    <EmbeddedResource Include="Assets\*" />
+  </ItemGroup>
+</Project>

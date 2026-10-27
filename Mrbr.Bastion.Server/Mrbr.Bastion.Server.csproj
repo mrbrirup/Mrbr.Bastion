@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Mrbr.Bastion.Operators.Sqlite/Mrbr.Bastion.Operators.Sqlite.csproj" />
+    <ProjectReference Include="../Mrbr.Bastion.Software.Hosting/Mrbr.Bastion.Software.Hosting.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Cryptography\Mrbr.Bastion.Cryptography.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Ingestion.Sqlite\Mrbr.Bastion.Ingestion.Sqlite.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Ingestion.AspNetCore\Mrbr.Bastion.Ingestion.AspNetCore.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Auditing.Sqlite\Mrbr.Bastion.Auditing.Sqlite.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Auditing.AspNetCore\Mrbr.Bastion.Auditing.AspNetCore.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Dashboard\Mrbr.Bastion.Dashboard.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Alerting.Sqlite\Mrbr.Bastion.Alerting.Sqlite.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Notifications.Sqlite\Mrbr.Bastion.Notifications.Sqlite.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Notifications.Smtp\Mrbr.Bastion.Notifications.Smtp.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Notifications.Webhooks\Mrbr.Bastion.Notifications.Webhooks.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Notifications.Hosting\Mrbr.Bastion.Notifications.Hosting.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Mrbr.Bastion.Hosting/Mrbr.Bastion.Hosting.csproj" />
+  </ItemGroup>
+</Project>

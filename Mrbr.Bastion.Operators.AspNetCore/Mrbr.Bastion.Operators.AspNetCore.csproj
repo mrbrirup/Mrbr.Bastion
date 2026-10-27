@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><TargetFramework>net11.0</TargetFramework></PropertyGroup><ItemGroup><FrameworkReference Include="Microsoft.AspNetCore.App" /><ProjectReference Include="../Mrbr.Bastion.Operators.Security/Mrbr.Bastion.Operators.Security.csproj" /></ItemGroup></Project>

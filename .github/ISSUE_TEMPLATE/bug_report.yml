@@ -1,0 +1,25 @@
+name: Bug report
+description: Report a reproducible problem using synthetic data.
+body:
+  - type: markdown
+    attributes:
+      value: "For vulnerabilities, follow SECURITY.md. Remove secrets, real host evidence, database contents and identifying screenshots before posting."
+  - type: input
+    id: version
+    attributes:
+      label: Revision and environment
+      description: Commit/tag, SDK version, Windows version and affected component. Do not include machine or account identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Minimal steps and synthetic configuration, expected behavior, actual behavior and relevant redacted errors.
+    validations:
+      required: true
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Collection or delivery impact
+      description: Where relevant, include queue/source loss counts, pending counts and whether evidence remains recoverable. Do not upload real ledgers or keys.

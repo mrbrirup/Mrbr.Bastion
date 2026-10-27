@@ -1,0 +1,12 @@
+syntax = "proto3";
+package mrbr.bastion.audit.v1;
+option csharp_namespace = "Mrbr.Bastion.Grpc.Protocol";
+
+// Small signed audit documents share their strict JSON schema with HTTP.
+// The canonical signature format is defined by AuditProtocol, independently of JSON/protobuf framing.
+message AuditDocument { bytes document = 1; }
+service HeartbeatAudits {
+  rpc CreateChallenge (AuditDocument) returns (AuditDocument);
+  rpc SubmitAudit (AuditDocument) returns (AuditDocument);
+  rpc GetNodeHealth (AuditDocument) returns (AuditDocument);
+}

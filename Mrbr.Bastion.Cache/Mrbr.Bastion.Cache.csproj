@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Mrbr.Bastion.Tests" />
+    <InternalsVisibleTo Include="Mrbr.Bastion.CrashProbe" />
+    <ProjectReference Include="../Mrbr.Bastion.Archiving/Mrbr.Bastion.Archiving.csproj" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.10" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5" />
+    <ProjectReference Include="..\Mrbr.Bastion.Abstraction\Mrbr.Bastion.Abstraction.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Cryptography\Mrbr.Bastion.Cryptography.csproj" />
+  </ItemGroup>
+</Project>

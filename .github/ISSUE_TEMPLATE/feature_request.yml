@@ -1,0 +1,15 @@
+name: Feature request
+description: Propose an improvement with a concrete monitoring or administration use case.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and intended outcome
+      description: Explain the use case and current limitation using synthetic examples.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and tradeoffs
+      description: Describe the smallest useful behavior, alternatives, privileges and evidence/privacy implications.

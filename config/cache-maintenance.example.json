@@ -1,0 +1,20 @@
+{
+  "nodeId": "server-01",
+  "databasePath": "data/telemetry-outbox.db",
+  "nodePrivateKeyPath": "keys/node-private.pem",
+  "receiverPublicKeyPath": "keys/receiver-public.pem",
+  "inventoryPayloads": false,
+  "maximumStoredPayloadBytes": 536870912,
+  "retention": {
+    "enabled": true,
+    "archiveDirectory": "archives",
+    "keepRecentBlocks": 128,
+    "minimumAgeSeconds": 60,
+    "intervalSeconds": 30,
+    "maximumBlocksPerSegment": 1024,
+    "maximumSegmentPayloadBytes": 16777216,
+    "maximumSegmentFileBytes": 67108864,
+    "maximumSegmentsPerRun": 8,
+    "maximumArchiveBytes": 10737418240
+  }
+}

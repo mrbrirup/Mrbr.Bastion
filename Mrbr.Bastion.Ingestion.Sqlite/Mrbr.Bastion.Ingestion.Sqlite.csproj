@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Mrbr.Bastion.Tests" />
+    <ProjectReference Include="..\Mrbr.Bastion.Ingestion\Mrbr.Bastion.Ingestion.csproj" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.10" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5" />
+  </ItemGroup>
+</Project>

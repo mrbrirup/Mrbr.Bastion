@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Grpc.Net.Client" Version="2.83.0" />
+    <ProjectReference Include="..\Mrbr.Bastion.Transport\Mrbr.Bastion.Transport.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Grpc\Mrbr.Bastion.Grpc.csproj" />
+  </ItemGroup>
+</Project>

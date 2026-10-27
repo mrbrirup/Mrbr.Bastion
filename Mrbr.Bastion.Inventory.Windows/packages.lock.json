@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      },
+      "mrbr.bastion.inventory.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.discovery": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Contracts": "[0.1.0-preview.1, )"
+        }
+      }
+    }
+  }
+}

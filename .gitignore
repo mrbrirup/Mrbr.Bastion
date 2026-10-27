@@ -1,0 +1,67 @@
+# Local research documents (including every file and subfolder).
+/docs/
+
+# .NET build, test, coverage, and package output.
+**/bin/
+**/obj/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+coverage/
+*.nupkg
+*.snupkg
+
+# IDE and per-user settings.
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+*.rsuser
+
+# Generated previews, temporary files, and local deployment state.
+/artifacts/
+/tmp/
+/data/
+/keys/
+/.nuget/
+# Local-only screenshot containing actual host software/version inventory.
+/images/configuration-guide/e2e/09-software-inventory.png
+*.log
+*.tmp
+*.bak
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+# Git on Windows also matches the .Sqlite project directory suffix.
+!*.Sqlite/
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.writer.lock
+*.bastion-archive
+
+# Local configuration and signing/TLS credentials. Keep *.example.json tracked.
+appsettings.Local.json
+appsettings.*.Local.json
+*.local.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.snk
+*.publishsettings
+*.pubxml
+
+# Operating-system metadata.
+.DS_Store
+Thumbs.db
+Desktop.ini

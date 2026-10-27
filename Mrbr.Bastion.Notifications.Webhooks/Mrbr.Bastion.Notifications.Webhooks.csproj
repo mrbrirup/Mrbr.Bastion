@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework></PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\Mrbr.Bastion.Notifications\Mrbr.Bastion.Notifications.csproj" /></ItemGroup>
+</Project>

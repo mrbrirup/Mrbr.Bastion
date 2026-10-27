@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      }
+    }
+  }
+}

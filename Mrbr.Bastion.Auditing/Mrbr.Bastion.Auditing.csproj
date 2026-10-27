@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mrbr.Bastion.Auditing.Contracts\Mrbr.Bastion.Auditing.Contracts.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Ingestion\Mrbr.Bastion.Ingestion.csproj" />
+    <ProjectReference Include="..\Mrbr.Bastion.Health\Mrbr.Bastion.Health.csproj" />
+  </ItemGroup>
+</Project>

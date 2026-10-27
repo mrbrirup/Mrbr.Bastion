@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net11.0</TargetFramework></PropertyGroup><ItemGroup><ProjectReference Include="../Mrbr.Bastion.Operators.Security/Mrbr.Bastion.Operators.Security.csproj" /><ProjectReference Include="../Mrbr.Bastion.Operators.Sqlite/Mrbr.Bastion.Operators.Sqlite.csproj" /></ItemGroup></Project>

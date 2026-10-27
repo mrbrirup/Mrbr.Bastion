@@ -1,0 +1,17 @@
+{
+  "Bastion": {
+    "Software": {
+      "Enabled": true,
+      "InventoryDatabasePath": "software-inventory.db",
+      "ExposureDatabasePath": "software-exposures.db",
+      "MaximumItems": 100000,
+      "MaximumFindings": 100000,
+      "IntelligenceEnabled": true,
+      "PollSeconds": 5,
+      "ObservationLifetimeSeconds": 86400,
+      "IntelligenceLifetimeSeconds": 86400,
+      "RefreshSeconds": 21600,
+      "Mappings": []
+    }
+  }
+}

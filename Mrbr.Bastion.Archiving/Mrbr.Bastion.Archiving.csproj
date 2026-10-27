@@ -1,0 +1,4 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Mrbr.Bastion.Abstraction/Mrbr.Bastion.Abstraction.csproj" /></ItemGroup>
+</Project>

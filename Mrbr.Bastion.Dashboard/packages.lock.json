@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      },
+      "mrbr.bastion.alerting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operations": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operations.hosting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operations": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operators": {
+        "type": "Project"
+      },
+      "mrbr.bastion.operators.aspnetcore": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operators.Security": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operators.security": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operators": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.vulnerabilities": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Contracts": "[0.1.0-preview.1, )"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "nodeId": "server-01",
+  "cacheDatabasePath": "inventory-outbox.db",
+  "crawlerDatabasePath": "inventory-crawlers.db",
+  "nodePrivateKeyPath": "keys/node-private.pem",
+  "receiverPublicKeyPath": "keys/receiver-public.pem",
+  "serviceUri": "https://localhost:7443",
+  "transport": "http",
+  "processes": true,
+  "installedApplications": true,
+  "includeCurrentUser": false,
+  "processEvents": false,
+  "baselineSeconds": 60,
+  "maximumConcurrentCrawlers": 2,
+  "crawlRepeatSeconds": 0,
+  "maximumStoredPayloadBytes": 536870912,
+  "retention": {
+    "enabled": false,
+    "archiveDirectory": "archives",
+    "keepRecentBlocks": 128,
+    "minimumAgeSeconds": 60,
+    "intervalSeconds": 30,
+    "maximumBlocksPerSegment": 1024,
+    "maximumSegmentPayloadBytes": 16777216,
+    "maximumSegmentFileBytes": 67108864,
+    "maximumSegmentsPerRun": 8,
+    "maximumArchiveBytes": 10737418240
+  },
+  "crawlers": [
+    {
+      "id": "applications-2026-10",
+      "enabled": false,
+      "root": "C:\\Program Files\\YourApplication",
+      "priority": 10,
+      "workPerRound": 20,
+      "delayMilliseconds": 100,
+      "maximumWorkItems": 100000,
+      "extensions": [".exe", ".dll", ".jar", ".zip", ".tar", ".gz"],
+      "excludedDirectories": [],
+      "maximumArchiveDepth": 3,
+      "maximumArchiveEntries": 10000,
+      "maximumEntryBytes": 16777216,
+      "maximumExpandedBytes": 134217728,
+      "maximumCompressionRatio": 100,
+      "maximumArchiveSeconds": 30
+    }
+  ]
+}

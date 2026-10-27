@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "MailKit": {
+        "type": "Direct",
+        "requested": "[4.17.0, )",
+        "resolved": "4.17.0",
+        "contentHash": "1nUAVLxM9fhT/78we6/AGsCesnpn5dRNLLeRqOfr52Wnk87pzVwo5YMTMyqnmoXrYc7piGhmayiMA/OgDluIjg==",
+        "dependencies": {
+          "MimeKit": "4.17.0"
+        }
+      },
+      "System.Security.Cryptography.Pkcs": {
+        "type": "Direct",
+        "requested": "[10.0.13, )",
+        "resolved": "10.0.13",
+        "contentHash": "a+EovgC1fBnwdlQ6cn3j4JFBfKqiFaFvoAhjisOoSvazLAcIznaBzPQP0oYnvccmeXfqUH1KebVZOxSeH6rMaw=="
+      },
+      "BouncyCastle.Cryptography": {
+        "type": "Transitive",
+        "resolved": "2.6.2",
+        "contentHash": "7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w=="
+      },
+      "MimeKit": {
+        "type": "Transitive",
+        "resolved": "4.17.0",
+        "contentHash": "h/KXsCreJf8RpR/PSAtlbvYtZFndp9N8Wn1Bs248AL7ITyhn+AiIY5bLTvt60tbN2mu6g8KadtBNWygTji2lqg==",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.6.2",
+          "System.Security.Cryptography.Pkcs": "10.0.0"
+        }
+      },
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      },
+      "mrbr.bastion.alerting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )"
+        }
+      }
+    }
+  }
+}

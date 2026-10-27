@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0": {
+      "Grpc.AspNetCore.Server": {
+        "type": "Direct",
+        "requested": "[2.83.0, )",
+        "resolved": "2.83.0",
+        "contentHash": "rWeSaXaSPIIerc82lhHKqmzlp/sgLnG+Zw1c3YEEVp/un+hJKPxJOXWuGUOS2cs3EvcZBZ2tliXsnAg5Mdk2Ew==",
+        "dependencies": {
+          "Grpc.Net.Common": "2.83.0"
+        }
+      },
+      "Google.Protobuf": {
+        "type": "Transitive",
+        "resolved": "3.32.0",
+        "contentHash": "fsKxV5bhcvXmZi+cUo5+IxzRMBHwHeFO8G5utNa9f+Mu37kmfy8JcUVvWPt4cX7EuQWAjjHUjZqVl7nGSTRHRg=="
+      },
+      "Grpc.Core.Api": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "xU8BT2bCw4Ct+/qIFJhhjkDEilKUbBOfp4US7l3Xa3hnlkN9l2LgISCbOw4PFYpW5jJFcK7FUAyWOFIQ94Hiqg=="
+      },
+      "Grpc.Net.Common": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "9w52xxORdIGu4Mm8lff3psMIlarenu+7TC4uIfiiW9AyaHZ6iPE/18gIkG1DD9byGDuhjuhnN9hiviBUAmCuZw==",
+        "dependencies": {
+          "Grpc.Core.Api": "2.83.0"
+        }
+      },
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      },
+      "mrbr.bastion.auditing": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Health": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.grpc": {
+        "type": "Project",
+        "dependencies": {
+          "Google.Protobuf": "[3.32.0, )",
+          "Grpc.Core.Api": "[2.83.0, )",
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.health": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.ingestion": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      }
+    }
+  }
+}

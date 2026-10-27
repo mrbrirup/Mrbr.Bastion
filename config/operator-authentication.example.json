@@ -1,0 +1,13 @@
+{
+  "Bastion": {
+    "Dashboard": {
+      "Enabled": true,
+      "AuthenticationMode": "Users",
+      "OperatorDatabasePath": "data/operators.db",
+      "SessionMinutes": 480,
+      "MaximumUsers": 10000,
+      "MaximumSecurityEvents": 1000000,
+      "MaximumOperatorSessions": 50000
+    }
+  }
+}

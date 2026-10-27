@@ -1,0 +1,35 @@
+using Microsoft.Data.Sqlite;
+using System.Text.Json;
+using Mrbr.Bastion.Inventory.Contracts;
+
+namespace Mrbr.Bastion.Inventory.Sqlite;
+
+internal sealed class InventoryDatabase : IAsyncDisposable
+{
+    private readonly SqliteConnection _connection;private readonly FileStream _writer;private readonly SemaphoreSlim _gate=new(1,1);private bool _disposed;
+    private InventoryDatabase(SqliteConnection c,FileStream w){_connection=c;_writer=w;}
+    public static InventoryDatabase Open(string path,string role,string schema)
+    {
+        path=Path.GetFullPath(path);Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        var writer=new FileStream(path+".writer.lock",FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None);SqliteConnection? c=null;
+        try
+        {
+            bool exists=File.Exists(path);c=new(new SqliteConnectionStringBuilder{DataSource=path,Mode=exists?SqliteOpenMode.ReadWrite:SqliteOpenMode.ReadWriteCreate,Pooling=false}.ToString());c.Open();
+            using(var setup=Command(c,null,"PRAGMA journal_mode=WAL;PRAGMA synchronous=FULL;PRAGMA foreign_keys=ON;PRAGMA trusted_schema=OFF;"))setup.ExecuteNonQuery();
+            if(!exists){using var tx=c.BeginTransaction();using var init=Command(c,tx,"CREATE TABLE inventory_metadata(version INTEGER NOT NULL,role TEXT NOT NULL);INSERT INTO inventory_metadata VALUES(1,$role);"+schema,("$role",role));init.ExecuteNonQuery();tx.Commit();}
+            using(var check=Command(c,null,"PRAGMA quick_check"))if(check.ExecuteScalar()as string!="ok")throw new InvalidDataException("Inventory database integrity failure.");
+            using(var check=Command(c,null,"SELECT version,role FROM inventory_metadata"))using(var r=check.ExecuteReader())if(!r.Read()||r.GetInt32(0)!=1||r.GetString(1)!=role)throw new InvalidDataException("Incorrect inventory database role/schema.");
+            return new(c,writer);
+        }catch{c?.Dispose();writer.Dispose();throw;}
+    }
+    public async Task<T> Run<T>(Func<SqliteConnection,SqliteTransaction,T> body,CancellationToken ct)
+    {
+        await _gate.WaitAsync(ct);try{ObjectDisposedException.ThrowIf(_disposed,this);using var tx=_connection.BeginTransaction();var value=body(_connection,tx);ct.ThrowIfCancellationRequested();tx.Commit();return value;}finally{_gate.Release();}
+    }
+    internal static SqliteCommand Command(SqliteConnection c,SqliteTransaction? tx,string sql,params(string Name,object? Value)[] args)
+    {var command=c.CreateCommand();command.Transaction=tx;command.CommandText=sql;foreach(var a in args)command.Parameters.AddWithValue(a.Name,a.Value??DBNull.Value);return command;}
+    internal static void Exec(SqliteConnection c,SqliteTransaction tx,string sql,params(string,object?)[] args){using var cmd=Command(c,tx,sql,args);cmd.ExecuteNonQuery();}
+    internal static string Encode<T>(T data)=>JsonSerializer.Serialize(data,InventoryJson.Options);
+    internal static T Decode<T>(string json){if(json.Length>65536)throw new InvalidDataException("Oversized inventory row.");return JsonSerializer.Deserialize<T>(json,InventoryJson.Options)??throw new InvalidDataException("Missing inventory row.");}
+    public async ValueTask DisposeAsync(){await _gate.WaitAsync();try{if(_disposed)return;_disposed=true;_connection.Dispose();_writer.Dispose();}finally{_gate.Release();}}
+}

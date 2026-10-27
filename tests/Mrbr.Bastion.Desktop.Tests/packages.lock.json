@@ -1,0 +1,558 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net11.0-windows7.0": {
+      "Microsoft.NET.Test.Sdk": {
+        "type": "Direct",
+        "requested": "[18.6.0, )",
+        "resolved": "18.6.0",
+        "contentHash": "kAIBt0MsYR0o2RULmlW5BhQ1ha50aGEgLKG4f1p0kePBGLJCprqs3S+NxRrYN8UH7mSQRPKpeiH9mwPMEKUObQ==",
+        "dependencies": {
+          "Microsoft.CodeCoverage": "18.6.0",
+          "Microsoft.TestPlatform.TestHost": "18.6.0"
+        }
+      },
+      "xunit": {
+        "type": "Direct",
+        "requested": "[2.9.3, )",
+        "resolved": "2.9.3",
+        "contentHash": "TlXQBinK35LpOPKHAqbLY4xlEen9TBafjs0V5KnA4wZsoQLQJiirCR4CbIXvOH8NzkW4YeJKP5P/Bnrodm0h9Q==",
+        "dependencies": {
+          "xunit.analyzers": "1.18.0",
+          "xunit.assert": "2.9.3",
+          "xunit.core": "[2.9.3]"
+        }
+      },
+      "xunit.runner.visualstudio": {
+        "type": "Direct",
+        "requested": "[3.1.5, )",
+        "resolved": "3.1.5",
+        "contentHash": "tKi7dSTwP4m5m9eXPM2Ime4Kn7xNf4x4zT9sdLO/G4hZVnQCRiMTWoSZqI/pYTVeI27oPPqHBKYI/DjJ9GsYgA=="
+      },
+      "BouncyCastle.Cryptography": {
+        "type": "Transitive",
+        "resolved": "2.6.2",
+        "contentHash": "7oWOcvnntmMKNzDLsdxAYqApt+AjpRpP2CShjMfIa3umZ42UQMvH0tl1qAliYPNYO6vTdcGMqnRrCPmsfzTI1w=="
+      },
+      "Google.Protobuf": {
+        "type": "Transitive",
+        "resolved": "3.32.0",
+        "contentHash": "fsKxV5bhcvXmZi+cUo5+IxzRMBHwHeFO8G5utNa9f+Mu37kmfy8JcUVvWPt4cX7EuQWAjjHUjZqVl7nGSTRHRg=="
+      },
+      "Grpc.AspNetCore.Server": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "rWeSaXaSPIIerc82lhHKqmzlp/sgLnG+Zw1c3YEEVp/un+hJKPxJOXWuGUOS2cs3EvcZBZ2tliXsnAg5Mdk2Ew==",
+        "dependencies": {
+          "Grpc.Net.Common": "2.83.0"
+        }
+      },
+      "Grpc.Core.Api": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "xU8BT2bCw4Ct+/qIFJhhjkDEilKUbBOfp4US7l3Xa3hnlkN9l2LgISCbOw4PFYpW5jJFcK7FUAyWOFIQ94Hiqg=="
+      },
+      "Grpc.Net.Client": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "dHYtx7hW4muttsCrWNG4/Ysb1iAIhNPEq28eo7vF166CdXn/RXOr3SGvSreIGIjvmdrADrBNJ2cUeJBto/T0XA==",
+        "dependencies": {
+          "Grpc.Net.Common": "2.83.0"
+        }
+      },
+      "Grpc.Net.Common": {
+        "type": "Transitive",
+        "resolved": "2.83.0",
+        "contentHash": "9w52xxORdIGu4Mm8lff3psMIlarenu+7TC4uIfiiW9AyaHZ6iPE/18gIkG1DD9byGDuhjuhnN9hiviBUAmCuZw==",
+        "dependencies": {
+          "Grpc.Core.Api": "2.83.0"
+        }
+      },
+      "MailKit": {
+        "type": "Transitive",
+        "resolved": "4.17.0",
+        "contentHash": "1nUAVLxM9fhT/78we6/AGsCesnpn5dRNLLeRqOfr52Wnk87pzVwo5YMTMyqnmoXrYc7piGhmayiMA/OgDluIjg==",
+        "dependencies": {
+          "MimeKit": "4.17.0"
+        }
+      },
+      "Microsoft.CodeCoverage": {
+        "type": "Transitive",
+        "resolved": "18.6.0",
+        "contentHash": "bkmCXn/65Cd0LdO2zTb/ValGAJ1H8y/CgYOiBb3jsDyHI3Y1ljKx6RBvhvn3e5D/4R4I00RRwLf+Bd2Sn6bJjA=="
+      },
+      "Microsoft.Data.Sqlite": {
+        "type": "Transitive",
+        "resolved": "10.0.10",
+        "contentHash": "58JwZ39lCvRXHfV5O6RQfbHEDu8ZsXI7weRoVRR4jrGRxxkS+qyeuGrN2xD+9VYEICApYr0iTSL6PuU+DdsvPg==",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "10.0.10",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.11",
+          "SQLitePCLRaw.core": "2.1.11"
+        }
+      },
+      "Microsoft.Data.Sqlite.Core": {
+        "type": "Transitive",
+        "resolved": "10.0.10",
+        "contentHash": "TPCs0ldm7AWqcKmp6f/Xr+14sat7hx4rHfRlS4RgCURBH2thEWbAKEyX7cCWr63zVJVOJIJZTg2cBiUXa8ys6g==",
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.11"
+        }
+      },
+      "Microsoft.Diagnostics.NETCore.Client": {
+        "type": "Transitive",
+        "resolved": "0.2.510501",
+        "contentHash": "juoqJYMDs+lRrrZyOkXXMImJHneCF23cuvO4waFRd2Ds7j+ZuGIPbJm0Y/zz34BdeaGiiwGWraMUlln05W1PCQ==",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "6.0.0"
+        }
+      },
+      "Microsoft.Diagnostics.Tracing.TraceEvent": {
+        "type": "Transitive",
+        "resolved": "3.1.19",
+        "contentHash": "x5YvHtNp/6tGOJL8SwNTPJuZGPCOx2JxTD3av5DRmZCfl9fwJ2FNn+NvcK7fndPmAz1qq1mfqMAZIu0ypAm0+A==",
+        "dependencies": {
+          "Microsoft.Diagnostics.NETCore.Client": "0.2.510501"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw=="
+      },
+      "Microsoft.Extensions.Logging": {
+        "type": "Transitive",
+        "resolved": "6.0.0",
+        "contentHash": "eIbyj40QDg1NDz0HBW0S5f3wrLVnKWnDJ/JtZ+yJDFnDj90VoPuoPmFkeaXrtu+0cKm5GRAwoDf+dBWXK0TUdg==",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "6.0.0"
+        }
+      },
+      "Microsoft.TestPlatform.ObjectModel": {
+        "type": "Transitive",
+        "resolved": "18.6.0",
+        "contentHash": "gQTW4BIfM2ZLxixo9ITXoulLKjn20FiiHtqTsx9PENqTrX7368ZeJ5L0QZJyReXDWORPRV8jXwZR6Aar8JOyaA=="
+      },
+      "Microsoft.TestPlatform.TestHost": {
+        "type": "Transitive",
+        "resolved": "18.6.0",
+        "contentHash": "em1eLz5Q46+hsCtAXdXggWAPd9gQyT4ngdsQ7k1eWvQgpsjtS/wAOJ/5TteieFdiAvrEq1iVn00LtusAxRaVmQ==",
+        "dependencies": {
+          "Microsoft.TestPlatform.ObjectModel": "18.6.0",
+          "Newtonsoft.Json": "13.0.3"
+        }
+      },
+      "MimeKit": {
+        "type": "Transitive",
+        "resolved": "4.17.0",
+        "contentHash": "h/KXsCreJf8RpR/PSAtlbvYtZFndp9N8Wn1Bs248AL7ITyhn+AiIY5bLTvt60tbN2mu6g8KadtBNWygTji2lqg==",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.6.2"
+        }
+      },
+      "Newtonsoft.Json": {
+        "type": "Transitive",
+        "resolved": "13.0.3",
+        "contentHash": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ=="
+      },
+      "SQLite": {
+        "type": "Transitive",
+        "resolved": "3.53.4",
+        "contentHash": "KN7jeWqgUPeBRe1FlcpZURzxomuKKEKHmBBQfg+Nx7NkY1LjKhzHvH+3ASkNvhayESE34nMBinL9CV21JfPRJw=="
+      },
+      "SQLitePCLRaw.bundle_e_sqlite3": {
+        "type": "Transitive",
+        "resolved": "3.0.5",
+        "contentHash": "SW8iASIyWMrLzqabUHYQRvALhvD4ylSBsj4PgEVGwc36kQjc9xT5kSV/XQ9rU7nIpBWD+LPyX3Hlw5FzyUzGeQ==",
+        "dependencies": {
+          "SQLite": "3.53.4",
+          "SQLitePCLRaw.config.e_sqlite3": "3.0.5"
+        }
+      },
+      "SQLitePCLRaw.config.e_sqlite3": {
+        "type": "Transitive",
+        "resolved": "3.0.5",
+        "contentHash": "aSk8WE5tF2MybESMgtZAEyMVCAWA0nBqOMc48HFoa9UoSdtm3goDXVzNRnefeKIwE6bV9NaNXptn1F9ReMQI0Q==",
+        "dependencies": {
+          "SQLitePCLRaw.provider.e_sqlite3": "3.0.5"
+        }
+      },
+      "SQLitePCLRaw.core": {
+        "type": "Transitive",
+        "resolved": "3.0.5",
+        "contentHash": "k81AYXXRCw3Zj8rOhyBoCsx/U97KYDFI2CSKr/ijl5BwpsW/hX/4kBiDmerFaoust8nxBwa0IHQFw8MmSHRtnQ=="
+      },
+      "SQLitePCLRaw.provider.e_sqlite3": {
+        "type": "Transitive",
+        "resolved": "3.0.5",
+        "contentHash": "um8YSWduhhuskTG2bHfZrBqMNQOydfU8pcseT+cu5RivOGyoUbCrGXxgoRNTmRYw2VbMWnEZVVFcneZT/5dsBg==",
+        "dependencies": {
+          "SQLitePCLRaw.core": "3.0.5"
+        }
+      },
+      "xunit.abstractions": {
+        "type": "Transitive",
+        "resolved": "2.0.3",
+        "contentHash": "pot1I4YOxlWjIb5jmwvvQNbTrZ3lJQ+jUGkGjWE3hEFM0l5gOnBWS+H3qsex68s5cO52g+44vpGzhAt+42vwKg=="
+      },
+      "xunit.analyzers": {
+        "type": "Transitive",
+        "resolved": "1.18.0",
+        "contentHash": "OtFMHN8yqIcYP9wcVIgJrq01AfTxijjAqVDy/WeQVSyrDC1RzBWeQPztL49DN2syXRah8TYnfvk035s7L95EZQ=="
+      },
+      "xunit.assert": {
+        "type": "Transitive",
+        "resolved": "2.9.3",
+        "contentHash": "/Kq28fCE7MjOV42YLVRAJzRF0WmEqsmflm0cfpMjGtzQ2lR5mYVj1/i0Y8uDAOLczkL3/jArrwehfMD0YogMAA=="
+      },
+      "xunit.core": {
+        "type": "Transitive",
+        "resolved": "2.9.3",
+        "contentHash": "BiAEvqGvyme19wE0wTKdADH+NloYqikiU0mcnmiNyXaF9HyHmE6sr/3DC5vnBkgsWaE6yPyWszKSPSApWdRVeQ==",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.9.3]",
+          "xunit.extensibility.execution": "[2.9.3]"
+        }
+      },
+      "xunit.extensibility.core": {
+        "type": "Transitive",
+        "resolved": "2.9.3",
+        "contentHash": "kf3si0YTn2a8J8eZNb+zFpwfoyvIrQ7ivNk5ZYA5yuYk1bEtMe4DxJ2CF/qsRgmEnDr7MnW1mxylBaHTZ4qErA==",
+        "dependencies": {
+          "xunit.abstractions": "2.0.3"
+        }
+      },
+      "xunit.extensibility.execution": {
+        "type": "Transitive",
+        "resolved": "2.9.3",
+        "contentHash": "yMb6vMESlSrE3Wfj7V6cjQ3S4TXdXpRqYeNEI3zsX31uTsGMJjEw6oD5F5u1cHnMptjhEECnmZSsPxB6ChZHDQ==",
+        "dependencies": {
+          "xunit.extensibility.core": "[2.9.3]"
+        }
+      },
+      "mrbr.bastion.abstraction": {
+        "type": "Project"
+      },
+      "mrbr.bastion.alerting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.alerting.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.10, )",
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.archiving": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Health": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.aspnetcore": {
+        "type": "Project",
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "[2.83.0, )",
+          "Mrbr.Bastion.Auditing": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Grpc": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.auditing.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite": "[10.0.10, )",
+          "Mrbr.Bastion.Auditing": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.cache": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite": "[10.0.10, )",
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Archiving": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Cryptography": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.configuration": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Core": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Inventory.Agent": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Server": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.core": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Diagnostics.Tracing.TraceEvent": "[3.1.19, )",
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.cryptography": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.dashboard": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Notifications": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Operations": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Operations.Hosting": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Operators.AspNetCore": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Vulnerabilities": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.desktop": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Configuration": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.grpc": {
+        "type": "Project",
+        "dependencies": {
+          "Google.Protobuf": "[3.32.0, )",
+          "Grpc.Core.Api": "[2.83.0, )",
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.health": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.hosting": {
+        "type": "Project"
+      },
+      "mrbr.bastion.ingestion": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.ingestion.aspnetcore": {
+        "type": "Project",
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "[2.83.0, )",
+          "Mrbr.Bastion.Grpc": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.ingestion.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite": "[10.0.10, )",
+          "Mrbr.Bastion.Ingestion": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.inventory.agent": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Cache": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Core": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Hosting": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Inventory.Crawling": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Inventory.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Inventory.Windows": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Transport.Grpc": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Transport.Http": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.contracts": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.crawling": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Discovery": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.discovery": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.inventory.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.10, )",
+          "Mrbr.Bastion.Inventory.Contracts": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.inventory.windows": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Discovery": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications.hosting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Notifications": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications.smtp": {
+        "type": "Project",
+        "dependencies": {
+          "MailKit": "[4.17.0, )",
+          "Mrbr.Bastion.Notifications": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.notifications.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.10, )",
+          "Mrbr.Bastion.Notifications": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.notifications.webhooks": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Notifications": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operations": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operations.hosting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operations": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operators": {
+        "type": "Project"
+      },
+      "mrbr.bastion.operators.aspnetcore": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operators.Security": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operators.security": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Operators": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.operators.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.10, )",
+          "Mrbr.Bastion.Operators": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      },
+      "mrbr.bastion.server": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Auditing.AspNetCore": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Auditing.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Cryptography": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Dashboard": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Hosting": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion.AspNetCore": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Notifications.Hosting": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Notifications.Smtp": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Notifications.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Notifications.Webhooks": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Operators.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Software.Hosting": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.software.hosting": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Alerting": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Ingestion": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Inventory.Sqlite": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Vulnerabilities.Nvd": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Vulnerabilities.Sqlite": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.transport": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Abstraction": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.transport.grpc": {
+        "type": "Project",
+        "dependencies": {
+          "Grpc.Net.Client": "[2.83.0, )",
+          "Mrbr.Bastion.Grpc": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Transport": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.transport.http": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Auditing.Contracts": "[0.1.0-preview.1, )",
+          "Mrbr.Bastion.Transport": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.vulnerabilities": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Inventory.Contracts": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.vulnerabilities.nvd": {
+        "type": "Project",
+        "dependencies": {
+          "Mrbr.Bastion.Vulnerabilities": "[0.1.0-preview.1, )"
+        }
+      },
+      "mrbr.bastion.vulnerabilities.sqlite": {
+        "type": "Project",
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "[10.0.10, )",
+          "Mrbr.Bastion.Vulnerabilities": "[0.1.0-preview.1, )",
+          "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
+        }
+      }
+    }
+  }
+}

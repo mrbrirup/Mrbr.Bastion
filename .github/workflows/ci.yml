@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: Check publication set and reviewed screenshots
+        run: python scripts/check_publication.py
+
+      - name: Scan source history for secrets
+        shell: pwsh
+        run: |
+          $scanner = & ./scripts/Get-Gitleaks.ps1
+          & $scanner git . --redact=100 --no-banner --ignore-gitleaks-allow --report-format json --report-path artifacts/gitleaks.json
+          if ($LASTEXITCODE -ne 0) { throw 'Secret scan failed.' }
+
+      # Never start live kernel ETW implicitly on an elevated hosted runner.
+      - name: Locked restore, Release build, both test suites, TLS and dependency audit
+        shell: pwsh
+        run: ./scripts/Verify-Release.ps1 -IncludeTls
+
+      - name: Save verification reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: verification-windows
+          path: |
+            artifacts/verification/
+            artifacts/gitleaks.json
+          if-no-files-found: warn
+          retention-days: 14
