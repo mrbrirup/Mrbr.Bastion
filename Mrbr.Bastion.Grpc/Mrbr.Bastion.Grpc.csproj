@@ -3,7 +3,7 @@
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.32.0" />
     <PackageReference Include="Grpc.Core.Api" Version="2.83.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.83.0" PrivateAssets="all" />
+    <PackageReference Include="Grpc.Tools" Version="2.85.0" PrivateAssets="all" />
     <ProjectReference Include="..\Mrbr.Bastion.Abstraction\Mrbr.Bastion.Abstraction.csproj" />
     <ProjectReference Include="..\Mrbr.Bastion.Auditing.Contracts\Mrbr.Bastion.Auditing.Contracts.csproj" />
     <Protobuf Include="Protos\telemetry.proto" GrpcServices="Both" />
