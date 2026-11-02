@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><TargetFramework>net11.0</TargetFramework><PackageLicenseExpression>MIT</PackageLicenseExpression></PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.32.0" />
+    <PackageReference Include="Google.Protobuf" Version="3.36.2" />
     <PackageReference Include="Grpc.Core.Api" Version="2.83.0" />
     <PackageReference Include="Grpc.Tools" Version="2.83.0" PrivateAssets="all" />
     <ProjectReference Include="..\Mrbr.Bastion.Abstraction\Mrbr.Bastion.Abstraction.csproj" />
